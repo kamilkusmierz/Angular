@@ -1,0 +1,13 @@
+<div class="navbar navbar-inverse bg-info">
+  <a class="navbar-brand text-center">Administracja sklepem internetowym</a>
+</div>
+<div class="mt-1">
+  <div class="col-3 float-left">
+    <button class="btn btn-block" routerLink="/admin/main/products" routerLinkActive="active">Produkty</button>
+    <button class="btn btn-block" routerLink="/admin/main/orders" routerLinkActive="active">Zamowienia</button>
+    <button class="btn btn-block" (click)="logout()">Wyloguj</button>
+  </div>
+  <div class="col-9 float-left">
+    <router-outlet></router-outlet>
+  </div>
+</div>

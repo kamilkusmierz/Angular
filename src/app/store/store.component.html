@@ -1,0 +1,38 @@
+<div class="navbar navbar-inverse bg-dark">
+  <a class="navbar-brand">
+    SKLEP SPORTOWY </a>
+    <app-cartsummary></app-cartsummary></div>
+<div class="col-xs-3  p-1 float-left">
+  <button class="btn btn-block btn-outline-primary" (click)="changeCategory()">Wszystkie</button>
+  <button *ngFor="let cat of categories" class="btn btn-outline-primary btn-block" [class.active]="cat == selectedCategory"
+    (click)="changeCategory(cat)">{{cat}}</button>
+    <button class="btn btn-block btn-danger mt-3" routerLink="/admin">Administracja</button>
+</div>
+<div class="col-9 p-1 float-left">
+  <div *ngFor="let product of products" class="card card-body">
+    <h4 class="card-header">
+      {{product.name}}
+      <span class="pull-right float-right">
+        {{product.price }} zł
+      </span>
+    </h4>
+    <div class="card-text p-1">{{product.description}}
+      <button class="btn btn-success btn-sm float-right" (click)="addProductToCart(product)">
+        Dodaj do koszyka
+      </button>
+    </div>
+  </div>
+  <div class=" form-inline pull-left mr-1">
+    <select class="form-control" [value]="productPerPage" (change)="changePageSize($event.target.value)">
+      <option value="3">3 na stronie</option>
+      <option value="4">4 na stronie</option>
+      <option value="6">6 na stronie</option>
+      <option value="8">8 na stronie</option>
+    </select>
+  </div>
+  <div class="btn-group pull-right">
+    <button *ngFor="let page of pageNumbers" (click)="changePage(page)" class="btn btn-outline-primary"
+      [class.active]="page == selectedPage">
+      {{page}}</button>
+  </div>
+</div>

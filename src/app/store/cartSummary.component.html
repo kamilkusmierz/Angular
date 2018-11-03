@@ -1,0 +1,15 @@
+<div class="pull-right">
+  <small>
+    Koszyk:
+    <span *ngIf="cart.itemCount > 0">
+      {{cart.itemCount}} produkt(ow)
+      {{cart.cartPrice}} zł
+    </span>
+    <span *ngIf="cart.itemCount == 0">
+      (pusty)
+    </span>
+  </small>
+  <button class="btn btn-sm " [disabled]="cart.itemCount == 0" routerLink='/cart'>
+    <i class="fa uk-icon-shopping-cart"></i>
+  </button>
+</div>
