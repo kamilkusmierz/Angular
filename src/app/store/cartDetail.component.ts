@@ -4,6 +4,6 @@ import { Cart } from '../model/cart.model';
   templateUrl: './cartDetail.component.html'
 })
 export class CartDetailComponent {
-
+// t
   constructor(public cart: Cart) {}
 }
